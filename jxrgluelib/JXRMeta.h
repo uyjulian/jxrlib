@@ -29,6 +29,8 @@
 
 #include <windowsmediaphoto.h>
 #ifndef WIN32
+#endif
+#if 1
 #include <wmspecstring.h>
 #endif
 
@@ -106,9 +108,18 @@
 #define WMP_valWMPhotoID WMP_valCompression
 
 
+#if 0
 #ifdef WIN32
 #define __in_win    __in
 #define __out_win   __out
+#endif
+#else
+#ifndef __in_win
+#define __in_win
+#endif
+#ifndef __out_win
+#define __out_win
+#endif
 #endif
 
 
