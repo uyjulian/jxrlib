@@ -32,7 +32,11 @@ extern "C" {
 #endif
 
 #include <JXRMeta.h>
+#ifdef _WIN32
 #include <guiddef.h>
+#else
+#include <guiddef_portable.h>
+#endif
 
 //================================================================
 #define WMP_SDK_VERSION 0x0101
