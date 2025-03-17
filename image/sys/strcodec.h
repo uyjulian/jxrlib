@@ -72,6 +72,8 @@
 #endif
 
 #ifdef __ANSI__
+#endif
+#if defined(__ANSI__) || (!defined(WIN32) && !defined(UNDER_CE))
 #define PLATFORM_ANSI
 #include "ansi.h"
 #endif
@@ -79,7 +81,12 @@
 //================================================================
 
 #ifdef PLATFORM_ANSI
+#if 0
 typedef unsigned long long U64;
+#else
+#include <stdint.h>
+typedef uint64_t U64;
+#endif
 #else // PLATFORM_ANSI
 typedef unsigned __int64 U64;
 #endif // PLATFORM_ANSI

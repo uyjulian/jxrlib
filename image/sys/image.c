@@ -40,8 +40,12 @@
 #include <string.h>
 
 #if !(defined(__ANSI__))
+#ifdef _WIN32
 // Desktop
 #include <windows.h>
+#else
+#include <time.h>
+#endif
 #else
 // ANSI
 #include <time.h>

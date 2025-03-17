@@ -50,6 +50,8 @@ extern "C" {
 #define min(b,a) ((a) < (b) ? (a) : (b))
 #endif
 #ifdef __ANSI__
+#endif
+#if defined(__ANSI__) || !defined(WIN32)
 #define STRCPY_SAFE(pszDest, cbDest, pszSrc)    (strncpy((pszDest), (pszSrc), (cbDest)) == (pszDest) ? 0 : 1)
 #else
 #define STRCPY_SAFE(pszDest, cbDest, pszSrc)    (strcpy_s((pszDest), (cbDest), (pszSrc)))

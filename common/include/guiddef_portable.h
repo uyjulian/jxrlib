@@ -57,7 +57,11 @@ typedef struct _GUID {
 #if defined(_WIN32) || defined(__ANSI__)
 #define FAR
 #else
+#if 0
 #define FAR _far
+#else
+#define FAR
+#endif
 #endif
 #endif
 
